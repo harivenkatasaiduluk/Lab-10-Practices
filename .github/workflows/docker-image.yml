@@ -26,15 +26,15 @@ jobs:
       - name: Build and push backend image
         uses: docker/build-push-action@v5
         with:
-          context: ./STUDENTAPI-SPRINGBOOT
-          file: ./STUDENTAPI-SPRINGBOOT/backend.Dockerfile
+          context: ./springbootexamproject
+          file: ./springbootexamproject/backend.Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/docker-backend-2396:latest
 
       - name: Build and push frontend image
         uses: docker/build-push-action@v5
         with:
-          context: ./STUDENTAPI-REACT
-          file: ./STUDENTAPI-REACT/frontend.Dockerfile
+          context: ./reactexamapp
+          file: ./reactexamapp/frontend.Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/docker-frontend-2396:latest
